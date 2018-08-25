@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>图片轮换</title>
+    <style>
+ul{
+    border:1px solid #ccc;
+    width:305px;
+    height:457px;
+    margin:0;
+    padding:0;
+}
+li{
+    width:305px;
+    height:457px;
+    margin:0;
+    padding:0;  
+}
+.show{
+    display:block;
+}
+.hide{
+    display: none;
+}
+</style>
+<script type="text/javascript">
+var index = 0;
+function start(){
+    // 每隔一秒执行一次function
+    setInterval(function(){
+        // 将所有的li隐藏
+        var ul = document.getElementById("photos");
+        var lis = ul.getElementsByTagName("li");
+        for(var i=0;i<lis.length;i++){
+            lis[i].className="hide";
+        }
+        // 将下一个li显示
+        index++;
+        lis[index%lis.length].className = "show";
+    },1000);
+}
+</script>
+</head>
+<body onload="start();">
+ <ul id="photos">
+  <li class="show"><img src="../web练习/素材/1.jpg"/></li>
+  <li class="hide"><img src="../web练习/素材/2.jpg"/></li>
+  <li class="hide"><img src="../web练习/素材/3.jpg"/></li>
+  <li class="hide"><img src="../web练习/素材/4.jpg"/></li>    
+</ul>   
+</body>
+</html>
