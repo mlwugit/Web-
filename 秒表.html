@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>秒表</title>
+    <style type="text/css">
+     #clock{
+         border:1px solid #ccc;
+         width:150px;
+         height:50px;
+     }
+</style>
+<script type="text/javascript">
+var id;
+var index = 1;
+function start1(){
+id = setInterval(function(){
+    var p = document.getElementById("clock");
+p.innerHTML = index++;
+},100);
+
+}
+function stop1(){
+    clearInterval(id);
+}
+function clear1(){
+var p = document.getElementById("clock");
+p.innerHTML = "";
+// 将毫秒数复位
+index=1;
+}
+</script>
+</head>
+<body>
+    <!--秒表的屏幕  -->
+ <p id="clock"></p>
+    <!--秒表的按钮  -->
+ <p>
+  <button onclick="start1();">启动</button> 
+  <button onclick="stop1();">暂停</button>
+  <button onclick="clear1();">清零</button>  
+</p>   
+</body>
+</html>
