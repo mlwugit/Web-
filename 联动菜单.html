@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>联动菜单</title>
+    <script type="text/javascript">
+    var cities=[
+        ["请选择"],
+        ["信阳","新乡","洛阳","商丘"],
+        ["青岛","济南","烟台"],
+        ["南京","无锡","苏州"],
+        ["武汉","黄石","十堰","宜昌"]
+    ]
+     function change(){
+        //  获取当前选中的省
+         var province = document.getElementById("province");
+         var pindex = province.value;
+        //  删除所有的市
+        var city= document.getElementById("city");
+        city.innerHTML="";
+        // 重新添加这个省下的市
+        var pcities=cities[pindex];
+        for (var i = 0; i <pcities.length; i++) {
+            // 创建option节点
+            var option = document.createElement("option");
+            // 设置新节点的值
+            option.setAttribute("value",i);
+            option.innerHTML=pcities[i];
+            // 将新节点追加到城市下拉选中
+            city.appendChild(option);
+        }
+     }
+</script>
+</head>
+<body>
+    <!--option的内容是下拉选项显示的值，其中的value是select节点返回值
+    返回的是选中的option的value值。onchange是值改变事件，当值发生改变时触发  -->
+  省：<select id="province" onchange="change();">
+      <option value="0">请选择</option>
+      <option value="1">河南省</option>
+      <option value="2">山东省</option>
+      <option value="3">江苏省</option>
+      <option value="4">湖北省</option>
+</select>
+    &nbsp;&nbsp;&nbsp;&nbsp; 
+  市：<select id="city">
+      <option>请选择</option>
+</select>  
+</body>
+</html>
