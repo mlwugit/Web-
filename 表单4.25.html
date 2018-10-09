@@ -1,0 +1,56 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>表单</title>
+<meta charset="utf-8"/>
+</head>
+<body>
+    <form>
+<p>
+<label for="pwd">密码</label>
+<input type="password" id="pwd"/>
+</p>
+<!--单选框-->
+<!--一组单选框之间是互斥的，同名的radio即为同一-->
+<p>
+性别:
+<input type="radio" id="male" name="sex"/>
+<lable for="male">男</label>
+<input type="radio" id="female" name="sex"/>
+<lable for="female">女</label>
+</p>
+<!--多选框-->
+<p>
+兴趣:
+<input type="checkbox" id="reading" name="favorite"/>
+<label for="reading">看书</label>
+<input type="checkbox" id="football" name="favorite"/>
+<label for="football">足球</label>
+</p>
+<p>
+    <label for="attchment">上传附件:</label>
+    <input type="file" id="attchment"/>
+</p>
+<p>
+    <input type="submit" name="提交"/>
+    <input type="reset" name="重置"/>
+    <input type="bottom" name="取消"/>
+</p>
+<p>
+    <label for="desc">自我介绍:</label>
+    <textarea id="desc" rows="5" cols="20"></textarea>
+</p>
+<!--下拉选-->
+<p>
+    <label for="course">课程:</label>
+    <select id="course">
+        <option>-请选择-</option>
+        <option>java</option>
+        <option>php</option>
+        <option>js</option>
+
+    </select>
+</p>
+</form>
+</body>
+</html>
